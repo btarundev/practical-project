@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS practical_lab; USE practical_lab;
+CREATE TABLE students(id INT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(80) NOT NULL,email VARCHAR(120) UNIQUE,age INT CHECK(age>=16),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE courses(id INT PRIMARY KEY AUTO_INCREMENT,title VARCHAR(80) NOT NULL);
+CREATE TABLE enrollments(student_id INT,course_id INT,PRIMARY KEY(student_id,course_id),FOREIGN KEY(student_id) REFERENCES students(id) ON DELETE CASCADE,FOREIGN KEY(course_id) REFERENCES courses(id) ON DELETE CASCADE);
+INSERT INTO students(name,email,age) VALUES('Asha','asha@example.com',20),('Mira','mira@example.com',21); INSERT INTO courses(title) VALUES('JavaScript'),('SQL');
+SELECT * FROM students; SELECT name,age FROM students WHERE age BETWEEN 18 AND 30 ORDER BY name LIMIT 10; UPDATE students SET age=22 WHERE email='mira@example.com'; DELETE FROM students WHERE id=99;
+SELECT COUNT(*),AVG(age),MIN(age),MAX(age) FROM students; SELECT s.name,c.title FROM students s INNER JOIN enrollments e ON s.id=e.student_id INNER JOIN courses c ON c.id=e.course_id;
+CREATE VIEW student_directory AS SELECT id,name,email FROM students; CREATE INDEX idx_student_name ON students(name); DROP INDEX idx_student_name ON students;
+DELIMITER // CREATE PROCEDURE student_count() BEGIN SELECT COUNT(*) AS total FROM students; END // DELIMITER ; CALL student_count();
+CREATE TABLE student_audit(id INT AUTO_INCREMENT PRIMARY KEY,student_id INT,action_name VARCHAR(20),changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+DELIMITER // CREATE TRIGGER students_after_insert AFTER INSERT ON students FOR EACH ROW BEGIN INSERT INTO student_audit(student_id,action_name) VALUES(NEW.id,'INSERT'); END // DELIMITER ;
+START TRANSACTION; INSERT INTO students(name,email,age) VALUES('Transaction User','transaction@example.com',19); SAVEPOINT before_update; UPDATE students SET age=20 WHERE email='transaction@example.com'; ROLLBACK TO before_update; COMMIT;
+WITH adult_students AS (SELECT * FROM students WHERE age>=18) SELECT * FROM adult_students;

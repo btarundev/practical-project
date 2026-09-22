@@ -1,0 +1,11 @@
+import express from 'express';
+import cookieParser from 'cookie-parser';
+const app=express();const PORT=3000;let students=[{id:1,name:'Asha',course:'JavaScript'}];
+app.use(express.json());app.use(cookieParser());app.use((req,res,next)=>{console.log(req.method,req.path);next()});
+app.get('/',(req,res)=>res.send('<h1>Practical Node.js API</h1><p>Use /api/students</p>'));
+app.get('/api/students',(req,res)=>res.json(students));
+app.get('/api/students/:id',(req,res)=>{const item=students.find(x=>x.id===Number(req.params.id));item?res.json(item):res.status(404).json({error:'Student not found'})});
+app.post('/api/students',(req,res)=>{if(!req.body.name)return res.status(400).json({error:'name is required'});const item={id:Date.now(),...req.body};students.push(item);res.status(201).json(item)});
+app.put('/api/students/:id',(req,res)=>{const i=students.findIndex(x=>x.id===Number(req.params.id));if(i<0)return res.sendStatus(404);students[i]={...students[i],...req.body};res.json(students[i])});
+app.delete('/api/students/:id',(req,res)=>{students=students.filter(x=>x.id!==Number(req.params.id));res.sendStatus(204)});
+app.use((req,res)=>res.status(404).json({error:'Route not found'}));app.use((err,req,res,next)=>res.status(500).json({error:'Server error'}));app.listen(PORT,()=>console.log(`http://localhost:${PORT}`));

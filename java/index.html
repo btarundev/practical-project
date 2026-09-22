@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A practical collection of JavaScript, database, backend and Supabase experiments.">
+	<title>Practical Code Lab</title>
+	<style>
+		:root { --ink: #edf4ff; --muted: #a9b9d2; --panel: #172744; --line: #2b4266; --blue: #4d91ff; --mint: #61e0b1; }
+		* { box-sizing: border-box; }
+		body { margin: 0; min-height: 100vh; color: var(--ink); font: 16px/1.6 "Segoe UI", Arial, sans-serif; background: #0d1830; }
+		body::before { content: ""; position: fixed; inset: 0; z-index: -1; opacity: .35; background: radial-gradient(circle at 80% 10%, #2563eb 0, transparent 28%), radial-gradient(circle at 10% 90%, #1b8e73 0, transparent 25%); }
+		.shell { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
+		header { padding: 5rem 0 3rem; }
+		.eyebrow { margin: 0 0 .75rem; color: var(--mint); font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+		h1, h2 { margin-top: 0; line-height: 1.1; letter-spacing: -.02em; }
+		h1 { max-width: 720px; margin-bottom: 1.25rem; font-size: clamp(2.6rem, 7vw, 5.7rem); }
+		header p:not(.eyebrow) { max-width: 650px; margin: 0; color: var(--muted); font-size: 1.1rem; }
+		.stats { display: flex; gap: 2rem; margin-top: 2rem; color: var(--muted); }
+		.stats strong { display: block; color: var(--ink); font-size: 1.5rem; }
+		.collection-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; padding-bottom: 3rem; }
+		.collection { display: flex; min-height: 245px; flex-direction: column; padding: 1.5rem; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(145deg, rgba(23,39,68,.98), rgba(18,31,55,.94)); box-shadow: 0 18px 35px #00000020; }
+		.collection:hover { border-color: var(--blue); transform: translateY(-4px); transition: transform .2s ease, border-color .2s ease; }
+		.icon { display: grid; width: 42px; height: 42px; place-items: center; margin-bottom: 1.2rem; border-radius: 10px; color: #09223a; background: var(--mint); font-weight: 800; }
+		.collection:nth-child(2) .icon { background: #ffd477; }
+		.collection:nth-child(3) .icon { background: #9ec5ff; }
+		.collection:nth-child(4) .icon { background: #e4a8ff; }
+		.collection h2 { margin-bottom: .7rem; font-size: 1.35rem; }
+		.collection p { margin: 0 0 1.25rem; color: var(--muted); }
+		.links { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: auto; }
+		a { color: var(--ink); text-decoration: none; }
+		.primary, .secondary { display: inline-block; padding: .6rem .85rem; border-radius: 7px; font-size: .9rem; font-weight: 700; }
+		.primary { color: #08223d; background: var(--mint); }
+		.secondary { border: 1px solid var(--line); color: var(--muted); }
+		.secondary:hover { color: var(--ink); border-color: var(--blue); }
+		footer { padding: 1.5rem 0 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+		@media (max-width: 650px) { header { padding-top: 3rem; } .collection-grid { grid-template-columns: 1fr; } .stats { gap: 1.2rem; } }
+	</style>
+</head>
+<body>
+	<div class="shell">
+		<header>
+			<p class="eyebrow">Practical code lab / 2026</p>
+			<h1>Build, test, and understand the web.</h1>
+			<p>A focused workspace for frontend experiments, databases, backend APIs, and cloud applications. Choose a collection to begin.</p>
+			<div class="stats"><span><strong>4</strong>collections</span><span><strong>67+</strong>JavaScript labs</span><span><strong>1</strong>workspace</span></div>
+		</header>
+
+		<main class="collection-grid">
+			<section class="collection">
+				<div class="icon">JS</div><h2>JavaScript</h2><p>Core programs, DOM manipulation, events, forms, browser APIs, storage, and mini projects.</p>
+				<div class="links"><a class="primary" href="javascript/index.html">Open exercises</a><a class="secondary" href="javascript/dom-events.html">DOM lab</a></div>
+			</section>
+			<section class="collection">
+				<div class="icon">SQL</div><h2>MySQL</h2><p>Database design, constraints, CRUD, joins, views, procedures, triggers, and transactions.</p>
+				<div class="links"><a class="primary" href="mysql/schema.sql">Open SQL schema</a><a class="secondary" href="mysql/README.md">Read guide</a></div>
+			</section>
+			<section class="collection">
+				<div class="icon">API</div><h2>Node.js backend</h2><p>Express routing, middleware, validation, error handling, and a small REST CRUD API.</p>
+				<div class="links"><a class="primary" href="nodejs/server.js">Open server code</a><a class="secondary" href="nodejs/README.md">Read guide</a></div>
+			</section>
+			<section class="collection">
+				<div class="icon">SB</div><h2>Supabase</h2><p>PostgreSQL schema, row-level security, authentication, storage, realtime, and Edge Functions.</p>
+				<div class="links"><a class="primary" href="supabase/schema.sql">Open SQL schema</a><a class="secondary" href="supabase/README.md">Read guide</a></div>
+			</section>
+		</main>
+		<footer>Open any collection to explore the source files. Keep secrets in local environment variables.</footer>
+	</div>
+</body>
+</html>

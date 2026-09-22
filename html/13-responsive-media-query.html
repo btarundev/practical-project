@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Webpage</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #eef3fb; }
+    header { padding: 40px; color: white; text-align: center; background: #173f9d; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; margin: 30px auto; padding: 20px; }
+    .card { padding: 25px; border: 1px solid #b8c6df; border-radius: 8px; background: white; }
+    @media (max-width: 700px) {
+      header { padding: 25px 15px; }
+      .cards { grid-template-columns: 1fr; margin: 15px auto; }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Responsive Webpage</h1><p>Resize the browser to see the media query.</p></header>
+  <main class="cards"><article class="card"><h2>HTML</h2><p>Structures webpages.</p></article><article class="card"><h2>CSS</h2><p>Styles webpages.</p></article><article class="card"><h2>JavaScript</h2><p>Adds interaction.</p></article></main>
+</body>
+</html>

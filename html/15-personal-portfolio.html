@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #172033; font-family: Arial, sans-serif; background: #f5f7fb; }
+    header { padding: 70px 20px; color: white; text-align: center; background: linear-gradient(135deg, #173f9d, #2dcf93); }
+    main { width: min(1000px, calc(100% - 30px)); margin: 30px auto; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .card { padding: 24px; border: 1px solid #dce3ef; border-radius: 8px; background: white; }
+    .button { display: inline-block; padding: 10px 16px; color: white; text-decoration: none; border-radius: 5px; background: #2563eb; }
+    @media (max-width: 650px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header><h1>Jordan Lee</h1><p>Frontend Developer and UI Designer</p><a class="button" href="mailto:jordan@example.com">Contact Me</a></header>
+  <main>
+    <section class="card"><h2>About Me</h2><p>I create accessible and responsive websites that make information easy to understand.</p></section>
+    <div class="grid">
+      <section class="card"><h2>Skills</h2><ul><li>HTML and CSS</li><li>Bootstrap</li><li>JavaScript</li><li>Responsive design</li></ul></section>
+      <section class="card"><h2>Education</h2><p>Bachelor of Computer Applications<br>Web technologies and interaction design</p></section>
+      <section class="card"><h2>Project</h2><p><strong>StudyFlow:</strong> a timetable planner for college students.</p></section>
+      <section class="card"><h2>Experience</h2><p>Built websites and prototypes for student and community projects.</p></section>
+    </div>
+  </main>
+</body>
+</html>

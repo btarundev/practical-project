@@ -1,0 +1,15 @@
+body{font-family:Arial,sans-serif;max-width:900px;margin:30px auto;padding:0 18px;color:#172033;background:#f5f7fb}h1{color:#173f9d}
+
+main{padding:20px;border:1px solid #dce3ef;border-radius:10px;background:#fff}
+
+button{padding:8px 14px;margin:4px;border:0;border-radius:5px;color:white;background:#2563eb;cursor:pointer}input{padding:8px;margin:4px;border:1px solid #aebbd0;border-radius:5px}
+
+pre,.output{padding:14px;white-space:pre-wrap;background:#eef3fb;border-left:4px solid #2dcf93}
+
+li{margin:8px 0}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+
+.card{padding:15px;border:1px solid #dce3ef;border-radius:8px}
+
+@media(max-width:650px){.grid{grid-template-columns:1fr}}

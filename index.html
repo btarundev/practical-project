@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical collection of HTML, CSS, JavaScript, database and backend exercises.">
+  <title>Practical Project | Learn by Building</title>
+  <style>
+    :root { --ink: #f4f7ff; --muted: #aab8d0; --panel: #182946; --line: #2b4266; --blue: #5798ff; --mint: #65e0b3; --orange: #ffb45c; }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; color: var(--ink); font: 16px/1.6 "Segoe UI", Arial, sans-serif; background: #0b162b; }
+    body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: radial-gradient(circle at 15% 15%, #2563eb80, transparent 28%), radial-gradient(circle at 90% 80%, #1d9c7b70, transparent 30%); }
+    .shell { width: min(1160px, calc(100% - 2rem)); margin: 0 auto; }
+    header { display: grid; grid-template-columns: 1.25fr .75fr; gap: 3rem; align-items: end; padding: 5.5rem 0 4rem; }
+    .eyebrow { margin: 0 0 1rem; color: var(--mint); font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 720px; margin: 0 0 1.25rem; font-size: clamp(3rem, 8vw, 6.7rem); line-height: .9; letter-spacing: -.07em; }
+    header p:not(.eyebrow) { max-width: 620px; margin: 0; color: var(--muted); font-size: 1.1rem; }
+    .mark { justify-self: end; width: 150px; height: 150px; display: grid; place-items: center; border: 1px solid #65e0b380; border-radius: 50%; color: var(--mint); font-size: 1.8rem; font-weight: 700; transform: rotate(8deg); }
+    .collections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding-bottom: 4rem; }
+    .card { min-height: 300px; display: flex; flex-direction: column; padding: 1.5rem; border: 1px solid var(--line); border-radius: 14px; background: #182946e8; box-shadow: 0 18px 40px #00000025; transition: transform .2s ease, border-color .2s ease; }
+    .card:hover { border-color: var(--blue); transform: translateY(-5px); }
+    .card:nth-child(2) { background: #24304be8; }.card:nth-child(3) { background: #173a3be8; }
+    .number { color: var(--muted); font-size: .8rem; font-weight: 700; letter-spacing: .12em; }
+    .icon { width: 50px; height: 50px; display: grid; place-items: center; margin: 2.4rem 0 1.25rem; border-radius: 12px; color: #09223a; background: var(--mint); font-weight: 800; }
+    .card:nth-child(2) .icon { background: var(--orange); }.card:nth-child(3) .icon { background: #9ec5ff; }
+    h2 { margin: 0 0 .75rem; font-size: 1.45rem; line-height: 1.15; }
+    .card p { flex: 1; margin: 0; color: var(--muted); }
+    .button { display: inline-block; margin-top: 1.5rem; padding: .65rem .9rem; border-radius: 7px; color: #08223d; background: var(--mint); font-size: .9rem; font-weight: 700; text-decoration: none; }
+    .button:hover { background: #b2f4da; }
+    footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1.4rem 0 2.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    footer a { color: var(--ink); }
+    @media (max-width: 780px) { header { grid-template-columns: 1fr; padding-top: 3.5rem; }.mark { justify-self: start; }.collections { grid-template-columns: 1fr; }.card { min-height: 250px; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div><p class="eyebrow">Practical project / learning workspace</p><h1>Learn by building.</h1><p>Explore a growing collection of frontend, backend, database, and cloud experiments. Pick a track and start making something work.</p></div>
+      <div class="mark">LAB<br>2026</div>
+    </header>
+    <main class="collections">
+      <article class="card"><span class="number">01 / STRUCTURE</span><div class="icon">HTML</div><h2>HTML exercises</h2><p>Build pages with headings, lists, tables, forms, media, semantic elements, and responsive foundations.</p><a class="button" href="html/index.html">Open HTML collection</a></article>
+      <article class="card"><span class="number">02 / STYLE</span><div class="icon">CSS</div><h2>CSS exercises</h2><p>Practice selectors, layouts, responsive interfaces, animations, SaaS components, dashboards, and AI surfaces.</p><a class="button" href="CSS/index.html">Open CSS collection</a></article>
+      <article class="card"><span class="number">03 / LOGIC & DATA</span><div class="icon">JS+</div><h2>JavaScript and backend</h2><p>Work through JavaScript programs, DOM labs, MySQL, Node.js APIs, and Supabase cloud experiments.</p><a class="button" href="java/index.html">Open Java collection</a></article>
+    </main>
+    <footer><span>Source files organized for focused practice.</span><a href="java/index-modern.html">View alternate Java hub</a></footer>
+  </div>
+</body>
+</html>

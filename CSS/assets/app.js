@@ -1,0 +1,1 @@
+function toggle(id){const element=document.getElementById(id);if(element)element.hidden=!element.hidden}function showToast(message){const toast=document.getElementById('toast');if(!toast)return;toast.textContent=message;toast.hidden=false;setTimeout(()=>toast.hidden=true,2500)}
